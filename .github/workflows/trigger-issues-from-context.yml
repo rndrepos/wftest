@@ -1,0 +1,15 @@
+name: Trigger issue creation from context
+
+on:
+  push:
+  
+jobs:
+
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - run: | 
+          curl -H "Authorization: token :${{ secrets.GITHUB_TOKEN }}" \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          "https://api.github.com/repos/${{ github.event.repository }}/dispatches" \
+          -d '{"event_type": "level_update", "client_payload": {"levels": ["dev","test"]}}'
