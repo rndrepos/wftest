@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: | 
-          curl -H "Authorization: token :${{ secrets.GITHUB_TOKEN }}" \
+          curl -H "Authorization: token :${{ secrets.PAT }}" \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           "https://api.github.com/repos/${{ github.event.repository }}/dispatches" \
           -d '{"event_type": "level_update", "client_payload": {"levels": ["dev","test"]}}'
