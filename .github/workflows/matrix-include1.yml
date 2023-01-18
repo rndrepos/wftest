@@ -1,4 +1,4 @@
-name: Create issues across prods and levels
+name: Create issues across matrix w/include
 
 on:
   push:
