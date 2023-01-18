@@ -3,13 +3,7 @@ name: Create jobs across matrix w/include
 on:
   push:
   
-jobs: 
-  create-new-job:
-   name: Create jobs across matrix w/include
-
-on:
-  push:
-  
+ 
 jobs: 
 
   strategy:
