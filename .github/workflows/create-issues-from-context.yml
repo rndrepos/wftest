@@ -1,4 +1,4 @@
-name: create issues from context
+name: create issues from matrix with include
   
 on: 
   repository_dispatch:
