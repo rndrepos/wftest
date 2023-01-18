@@ -10,14 +10,10 @@ jobs:
         prod: [prod1, prod2]
         level: [dev, stage, rel]
         include:
-          - tag1: prelim
-         # - tag1: beta
-         #   level: rel
-        #  - prod: prod1
-        #    approved1: ok
-        #  - prod: prod3
-        #  - prod: prod3
-        #    level: dev
+          - prod: prod3
+          - prod: prod3
+            level: dev
+            tag: alpha
     uses: rndrepos/common/.github/workflows/create-issue-via-gh.yml@main
     secrets: inherit
     with:
