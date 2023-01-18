@@ -1,0 +1,27 @@
+name: Create jobs across matrix w/include
+
+on:
+  push:
+  
+jobs: 
+  create-new-job:
+   name: Create jobs across matrix w/include
+
+on:
+  push:
+  
+jobs: 
+
+  strategy:
+    matrix:
+      fruit: [apple, pear]
+      animal: [cat, dog]
+      include:
+        - color: green
+        - color: pink
+          animal: cat
+        - fruit: apple
+          shape: circle
+        - fruit: banana
+        - fruit: banana
+          animal: cat
