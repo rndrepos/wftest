@@ -1,0 +1,27 @@
+name: Create issues across matrix w/exclude
+
+on:
+  push:
+  
+jobs: 
+  create-new-issue:
+    strategy:
+      matrix:
+        prod: [prod1, prod2]
+        level: [dev, stage, rel]
+        exclude:
+          - prod: prod1
+            level: stage
+          - level: dev 
+            
+    uses: rndrepos/common/.github/workflows/create-issue-via-gh.yml@main
+    secrets: inherit
+    with:
+      title: "${{ matrix.prod}} issue"
+      body: "Update for ${{ matrix.level }}"
+
+  report-issue-number:
+    runs-on: ubuntu-latest
+    needs: create-new-issue
+    steps:
+      - run: echo ${{ needs.create-new-issue.outputs.issue-number }}
