@@ -1,4 +1,4 @@
-name: Create jobs across matrix w/include
+name: Test matrix as doc'd
 
 on:
   push:
@@ -23,5 +23,5 @@ jobs:
 
     steps:
       - run: | 
-          echo ${{ matix.fruit }}, ${{ matrix.animal }}, ${{ matrix.color }}, ${{ matrix.shape }}
+          echo ${{ matrix.fruit }}, ${{ matrix.animal }}, ${{ matrix.color }}, ${{ matrix.shape }}
    
