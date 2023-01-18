@@ -10,11 +10,11 @@ jobs:
         prod: [prod1, prod2]
         level: [dev, stage, rel]
         include:
-          - tag: alpha
-          - tag: beta
+          - tag1: alpha
+          - tag1: beta
             level: rel
           - prod: prod1
-            approved: true
+            approved1: ok
           - prod: prod3
           - prod: prod3
             level: dev
