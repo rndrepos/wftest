@@ -5,17 +5,23 @@ on:
   
  
 jobs: 
+  test-matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fruit: [apple, pear]
+        animal: [cat, dog]
+        include:
+          - color: green
+          - color: pink
+            animal: cat
+          - fruit: apple
+            shape: circle
+          - fruit: banana
+          - fruit: banana
+            animal: cat
 
-  strategy:
-    matrix:
-      fruit: [apple, pear]
-      animal: [cat, dog]
-      include:
-        - color: green
-        - color: pink
-          animal: cat
-        - fruit: apple
-          shape: circle
-        - fruit: banana
-        - fruit: banana
-          animal: cat
+    steps:
+      - run: | 
+          echo ${{ matix.fruit }}, ${{ matrix.animal }}, ${{ matrix.color }}, ${{ matrix.shape }}
+   
